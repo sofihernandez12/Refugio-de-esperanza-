@@ -1,28 +1,225 @@
 
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Refugio de Esperanza</title>
+
+<style>
+
 body{
-background:linear-gradient(
-135deg,
-#faf7f2,
-#e7dfef,
-#dce8d8
-);
+font-family:Segoe UI,sans-serif;
+margin:0;
+padding:0;
+background:linear-gradient(135deg,#faf7f2,#efe7fa,#e6efe3);
 background-size:300% 300%;
-animation:fondo 15s ease infinite;
+animation:fondo 15s infinite;
 color:#4a4a4a;
 }
 
 @keyframes fondo{
-
-0%{
-background-position:0% 50%;
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-50%{
-background-position:100% 50%;
+header{
+text-align:center;
+padding:100px 20px;
 }
 
-100%{
-background-position:0% 50%;
+h1{
+font-size:60px;
+color:#b08968;
 }
 
+.hero{
+font-size:22px;
+max-width:800px;
+margin:auto;
+line-height:1.8;
 }
+
+.mensaje{
+background:white;
+max-width:900px;
+margin:30px auto;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+text-align:center;
+font-size:24px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+h2{
+text-align:center;
+margin-top:40px;
+}
+
+.toast{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+padding:15px 20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+footer{
+text-align:center;
+padding:50px;
+margin-top:40px;
+background:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="toast" id="toast">
+🌸 Bienvenido a Refugio de Esperanza
+</div>
+
+<header>
+
+<h1>🌸 Refugio de Esperanza</h1>
+
+<p class="hero">
+
+Porque todos necesitamos un refugio alguna vez.
+
+Un espacio humano, tranquilo y acogedor para respirar,
+encontrar esperanza y recordar que no estás solo.
+
+</p>
+
+</header>
+
+<div class="mensaje" id="frase">
+
+🌿 Gracias por estar aquí.
+
+</div>
+
+<h2>💌 Cartas para quien las necesite</h2>
+
+<section class="grid">
+
+<div class="card">
+<h3>🌿 Para quien está cansado</h3>
+<p>Está bien descansar. No tienes que demostrar nada hoy.</p>
+</div>
+
+<div class="card">
+<h3>💜 Para quien se siente diferente</h3>
+<p>No necesitas cambiar para merecer cariño.</p>
+</div>
+
+<div class="card">
+<h3>✨ Para quien perdió la esperanza</h3>
+<p>La esperanza puede volver poco a poco.</p>
+</div>
+
+<div class="card">
+<h3>🌸 Para quien sigue luchando</h3>
+<p>Gracias por seguir aquí. Tu historia continúa.</p>
+</div>
+
+</section>
+
+<h2>🌱 Pequeñas Victorias</h2>
+
+<section class="grid">
+
+<div class="card">
+Hoy me levanté aunque no tenía ganas.
+</div>
+
+<div class="card">
+Hoy hablé con alguien.
+</div>
+
+<div class="card">
+Hoy salí a caminar.
+</div>
+
+<div class="card">
+Hoy decidí seguir adelante.
+</div>
+
+</section>
+
+<footer>
+
+💌 No tienes que cargar con todo tú solo.
+
+<br><br>
+
+Pedir ayuda también es una forma de avanzar.
+
+</footer>
+
+<script>
+
+const frases=[
+
+"🌸 Gracias por estar aquí.",
+
+"🌿 No tienes que resolverlo todo hoy.",
+
+"💜 Tu valor no depende de tu productividad.",
+
+"🍀 Descansar también es avanzar.",
+
+"✨ Sobrevivir a un día difícil también cuenta.",
+
+"🌈 Mereces apoyo y comprensión.",
+
+"🌷 Eres más fuerte de lo que crees.",
+
+"☀️ Un día difícil no define tu historia."
+
+];
+
+setInterval(function(){
+
+document.getElementById("frase").innerHTML=
+
+frases[Math.floor(Math.random()*frases.length)];
+
+},7000);
+
+setTimeout(function(){
+
+document.getElementById("toast").style.display="none";
+
+},5000);
+
+</script>
+
+</body>
+</html>
